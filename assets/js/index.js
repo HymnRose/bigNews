@@ -1,5 +1,8 @@
 $(function () {
+  // $(function(){})是局部方法，需要挂载到window上才可以调用
+  window.getUserInfo = getUserInfo
   //获取用户的基本信息 
+
   getUserInfo()
 
   // 退出登录
@@ -19,8 +22,8 @@ $(function () {
       //     Authorization: localStorage.getItem('token') || ''
       // },
       success: function (res) {
-        // console.log(res);
-        if (status !== 0) {
+        // console.log(res);  
+        if (res.status !== 0) {
           return layui.layer.msg('获取用户信息失败！')
         }
         renderAvatar(res.data)

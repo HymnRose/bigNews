@@ -54,7 +54,7 @@ $(function () {
     var data = $(this).serialize()
     $.post('/api/login', data, function (res) {
       console.log(res);
-      if (res.status != 0) {
+      if (res.status !== 0) {
 
         return layer.msg('登录失败！');  //弹出信息
       }

@@ -3,7 +3,7 @@
 // 在这个函数中，我们可以拿到给ajax的配置对象，
 // 调用这个函数之后才会发起请求
 $.ajaxPrefilter(function (options) {
-  console.log(options);
+  // console.log(options);
   // console.log(options.url);
   options.url = 'http://ajax.frontend.itheima.net' + options.url
   // console.log(options);
@@ -16,8 +16,8 @@ $.ajaxPrefilter(function (options) {
   }
 
   options.complete = function (res) {
-    console.log(123);
-    console.log(res);
+    // console.log(123);
+    // console.log(res);
     if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
       localStorage.removeItem('token')
       location.href = 'login.html'

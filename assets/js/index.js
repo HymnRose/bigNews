@@ -43,7 +43,7 @@ $(function () {
   // 渲染用户头像
   function renderAvatar(user) {
     //获取用户名称
-    console.log(user);
+    // console.log(user);
     var name = user.nickname || user.username
     $('.welcome').html('欢迎&nbsp;&nbsp;' + name)
     if (user.user_pic !== null) {
